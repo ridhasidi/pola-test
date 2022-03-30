@@ -14,6 +14,7 @@ export default function CreateForm() {
     const { value } = e.target;
     setAuthor(value);
   };
+  const baseUrl = "https://crudcrud.com/api/4c48163b130a4f3983606edb3b03f2d1/books";
 
   const createNewBook = (e) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ export default function CreateForm() {
     // console.log(data);
     axios({
       method: "POST",
+      url: baseUrl,
       data: JSON.stringify(data),
       headers: { "content-type": "application/x-www-form-urlencoded" },
     })
